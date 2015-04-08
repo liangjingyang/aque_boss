@@ -1,0 +1,74 @@
+<!doctype html>
+<head>
+<title>Croods Helper</title>
+<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='analysis.css') }}">
+
+<!--[if lte IE 8]>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-old-ie-min.css">
+<![endif]-->
+<!--[if gt IE 8]><!-->
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
+<!--<![endif]-->
+
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js">
+</script>
+
+<script>
+    $('document').ready(function() {
+        $('#menu_trigger_1').click();
+    })
+    function menu_trigger(url) {
+        console.log(url);
+        $('#content_replace').load(url);
+    }
+</script>
+
+</head>
+
+<body>
+    <div class="body">
+        <div class="header">
+            <div class="home-menu pure-menu pure-menu-horizontal">
+                <a class="pure-menu-heading" href="">Croods Analysis</a>
+
+                <ul class="pure-menu-list">
+                    <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
+                    <a href="#" class="pure-menu-link">Server</a>
+                    <ul class="pure-menu-children">
+                        <li class="pure-menu-item"><a href="#" class="pure-menu-link">Server1</a></li>
+                        <li class="pure-menu-item"><a href="#" class="pure-menu-link">Server2</a></li>
+                        <li class="pure-menu-item"><a href="#" class="pure-menu-link">Server3</a></li>
+                    </ul>
+                    </li>
+                    <li class="pure-menu-item"><a href="#" class="pure-menu-link">注销</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="content-wrapper">
+            <div class="content-grid pure-g">
+                <div class="content-left pure-u-1-6">
+                    <div class="pure-menu custom-restricted-width">
+                        <ul class="pure-menu-list">
+                            {% for entry in analysis_menu %}
+                                {% if entry.sort_id == 0 %}
+                                <li class="pure-menu-heading">{{ entry.name }}</li>
+                                {% else %}
+                                <li class="pure-menu-item">
+                                <a id="menu_trigger_{{ entry.tmp_id }}" class="pure-menu-link" 
+                                    href="javascript:void(0)" onClick="menu_trigger('{{ entry.url }}')">{{ entry.name }}</a>
+                                </li>
+                                {% endif %}
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+                <div id="content_replace" class="content-right pure-u-5-6">
+                </div>
+            </div>
+            <div class="content-footer">
+                <p>croods analysis</p>
+            </div>
+        </div>
+    </div>
+</body>

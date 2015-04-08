@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+{% block body %}
+<ul class="nav">
+    {% for entry in nav %}
+        <table border="1" cellpadding="10">
+            {% if entry.id % 2 == 0 %}
+            
+            <tr bgcolor=#fafafa>
+                <td>{{ entry.name }}</td>
+                <td><a href="{{ entry.url|safe }}">{{ entry.url|safe }}</a></td>
+            </tr>
+            {% else %}
+
+            <tr bgcolor=#eeeeee>
+                <td>{{ entry.name }}</td>
+                <td><a href="{{ entry.url|safe }}">{{ entry.url|safe }}</a></td>
+            </tr>
+            {% endif %}
+        </table>
+    {% else %}
+        <li><em>Unbelievable.  No entries here so far</em>
+    {% endfor %}
+</ul>
+{% endblock %}

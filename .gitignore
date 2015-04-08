@@ -1,0 +1,6 @@
+venv/
+*.pyc
+*.log
+*.swp
+*.swo
+

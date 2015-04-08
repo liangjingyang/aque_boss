@@ -1,0 +1,264 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/*
+ * -- BASE STYLES --
+ * Most of these are inherited from Base, but I want to change a few.
+ */
+body {
+    line-height: 1.7em;
+    color: #333333;
+    font-size: 13px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+label {
+    color: #34495e;
+}
+
+.pure-img-responsive {
+    max-width: 100%;
+    height: auto;
+}
+
+/*
+ * -- LAYOUT STYLES --
+ * These are some useful classes which I will need
+ */
+.l-box {
+    padding: 1em;
+}
+
+.l-box-lrg {
+    padding: 2em;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.is-center {
+    text-align: center;
+}
+
+
+
+/*
+ * -- PURE FORM STYLES --
+ * Style the form inputs and labels
+ */
+.pure-form label {
+    margin: 1em 0 0;
+    font-weight: bold;
+    font-size: 100%;
+}
+
+.pure-form input[type] {
+    border: 2px solid #ddd;
+    box-shadow: none;
+    font-size: 100%;
+    width: 100%;
+    margin-bottom: 1em;
+}
+
+/*
+ * -- PURE BUTTON STYLES --
+ * I want my pure-button elements to look a little different
+ */
+.pure-button {
+    background-color: #1f8dd6;
+    color: white;
+    padding: 0.5em 2em;
+    border-radius: 5px;
+}
+
+a.pure-button-primary {
+    background: white;
+    color: #1f8dd6;
+    border-radius: 5px;
+    font-size: 120%;
+}
+
+
+/*
+ * -- MENU STYLES --
+ * I want to customize how my .pure-menu looks at the top of the page
+ */
+
+.home-menu {
+    width: 78em;
+    color: white;
+    background: #2E6FAC;
+    text-align: left;
+    /*box-shadow: 0px 3px 2px rgba(0,0,0, 0.10);*/
+}
+
+.home-menu ul {
+    float: right;
+}
+
+.pure-menu.pure-menu-fixed {
+    border-bottom: none;
+    z-index: 4;
+}
+
+.home-menu .pure-menu-heading {
+    color: white;
+    font-weight: 600;
+    font-size: 150%;
+}
+
+.home-menu .pure-menu-list li a:hover,
+.home-menu .pure-menu-list li a:hover {
+    background: #427DB4;
+}
+
+.home-menu .pure-menu-children {
+    background: #eeeeee;
+    box-shadow: 2px 2px 1px rgba(0,0,0, 0.10);
+}
+
+.home-menu .pure-menu-children a {
+    color: #333333;
+}
+
+.home-menu .pure-menu-children li a:hover,
+.home-menu .pure-menu-children li a:focus {
+    background: #5A92C7;
+    color: white;
+}
+
+.home-menu a {
+    font-size: 120%;
+    color: white;
+}
+
+.home-menu li a:hover,
+.home-menu li a:focus {
+    background: none;
+    border: none;
+    color: white;
+}
+
+
+
+/*
+ * -- CONTENT STYLES --
+ * This represents the content area (everything below the blue section)
+ */
+.content-wrapper {
+    position: absolute;
+    width: 78em;
+    z-index: 2;
+
+}
+
+.content-grid {
+    padding: 0;
+    background: #fff;
+    min-height: 730px;
+}
+
+.content-footer {
+    background: #fff;
+    width: 100%;
+    height: 50px;
+    border-top: 1px solid #ccc;
+    text-align: center;
+}
+
+.content-left {
+    background: #fff;
+    border-right: 1px solid #ccc;
+}
+
+.content-left .pure-menu-heading {
+    font-weight: bold;
+    background: #f3f3f3;
+}
+
+.content-left .pure-menu-item a {
+    /*margin-left: 1.5em;*/
+    font-size: 90%;
+}
+
+.content-left .pure-menu-item a:hover,
+.content-left .pure-menu-item a:focus {
+    background: #E0ECF9;
+}
+
+.content-right{
+    background: #edeef0;
+}
+
+.content-title {
+    width: 100%;
+    background: #f7f7f7;
+    padding-left: 2em;
+    border-top: 1px solid #f7f7f7;
+    border-bottom: 1px solid #ccc;
+    box-shadow: 0px 2px 2px rgba(0,0,0, 0.10);
+}
+
+.content-body {
+    padding: 0.8em;
+}
+
+.content-args {
+    border: #c1c1c1 1px solid;
+    background: #fff;
+    margin-bottom: 15px;
+    padding: 20px 20px 20px 20px;
+    position: relative;
+}
+
+.content-graph {
+    border: #c1c1c1 1px solid;
+    background: #fff;
+    margin-bottom: 15px;
+    padding: 20px 20px 20px 20px;
+    position: relative;
+}
+
+.content-list {
+    border: #c1c1c1 1px solid;
+    background: #fff;
+    margin-bottom: 15px;
+    padding: 20px 20px 20px 20px;
+    position: relative;
+}
+
+
+/*
+ * -- TABLET (AND UP) MEDIA QUERIES --
+ * On tablets and other medium-sized devices, we want to customize some
+ * of the mobile styles.
+ */
+@media (min-width: 48em) {
+
+    /* We increase the body font size */
+    body {
+        font-size: 16px;
+    }
+}
+
+/*
+ * -- DESKTOP (AND UP) MEDIA QUERIES --
+ * On desktops and other large devices, we want to over-ride some
+ * of the mobile and tablet styles.
+ */
+@media (min-width: 78em) {
+
+    .content-wrapper {
+        width: 100%;
+    }
+
+    .home-menu {
+        width: 100%;
+    }
+}
