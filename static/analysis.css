@@ -233,6 +233,37 @@ a.pure-button-primary {
     position: relative;
 }
 
+.content-list table {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.content-list .tr-even:hover,
+.content-list .tr-even:focus,
+.content-list .tr-odd:hover,
+.content-list .tr-odd:focus {
+    background: #E0ECF9
+}
+
+.content-list .tr-odd {
+    background: #fafafa
+}
+
+.content-list .tr-even {
+    background: #f0f0f0
+}
+
+.content-list .tr-head {
+    background: #ddd
+}
+
+.content-list td {
+    padding: 9px 10px 9px 10px;
+    line-height: 25px;
+    word-break: break-all;
+}
+
 
 /*
  * -- TABLET (AND UP) MEDIA QUERIES --

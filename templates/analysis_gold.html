@@ -14,5 +14,45 @@
 {% endblock %}
 
 {% block content_list %}
-<p>这里是数据列表</p>
+    <p>这里是数据列表</p>
+    {% for entry in logs %}
+        <table cellpadding="10">
+            {% if entry.tmp_id == 0 %}
+                <tr class="tr-head">
+                    <td width="10%">{{ entry.id }}</td>
+                    <td width="10%">{{ entry.sec }}</td>
+                    <td width="10%">{{ entry.player_id }}</td>
+                    <td width="10%">{{ entry.player_lv }}</td>
+                    <td width="10%">{{ entry.action }}</td>
+                    <td width="10%">{{ entry.type_id }}</td>
+                    <td width="10%">{{ entry.num }}</td>
+                    <td>{{ entry.reason }}</td>
+                </tr>
+            {% else %}
+                {% if entry.tmp_id % 2 == 0 %}
+                    <tr class="tr-even">
+                        <td width="10%">{{ entry.id }}</td>
+                        <td width="10%">{{ entry.sec }}</td>
+                        <td width="10%">{{ entry.player_id }}</td>
+                        <td width="10%">{{ entry.player_lv }}</td>
+                        <td width="10%">{{ entry.action }}</td>
+                        <td width="10%">{{ entry.type_id }}</td>
+                        <td width="10%">{{ entry.num }}</td>
+                        <td>{{ entry.reason }}</td>
+                    </tr>
+                {% else %}
+                    <tr class="tr-odd">
+                        <td width="10%">{{ entry.id }}</td>
+                        <td width="10%">{{ entry.sec }}</td>
+                        <td width="10%">{{ entry.player_id }}</td>
+                        <td width="10%">{{ entry.player_lv }}</td>
+                        <td width="10%">{{ entry.action }}</td>
+                        <td width="10%">{{ entry.type_id }}</td>
+                        <td width="10%">{{ entry.num }}</td>
+                        <td>{{ entry.reason }}</td>
+                    </tr>
+                {% endif %}
+            {% endif %}
+        </table>
+    {% endfor %}
 {% endblock %}
